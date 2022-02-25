@@ -1,12 +1,20 @@
 import logoImg from "../../assets/logo.svg";
 import { Container, Content } from "./styles";
 
-export const Header = () => {
+type HeaderProps = {
+  onOpenNewTransactionModal: () => void;
+};
+
+export const Header = ({
+  onOpenNewTransactionModal,
+}: HeaderProps): React.ReactElement => {
   return (
     <Container>
       <Content>
         <img src={logoImg} alt="money tracker" />
-        <button type="button">New transaction</button>
+        <button type="button" onClick={onOpenNewTransactionModal}>
+          New transaction
+        </button>
       </Content>
     </Container>
   );

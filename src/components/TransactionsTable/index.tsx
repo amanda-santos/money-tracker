@@ -11,7 +11,7 @@ type Transaction = {
   createdAt: string;
 };
 
-export const TransactionsTable = () => {
+export const TransactionsTable = (): React.ReactElement => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   useEffect(() => {

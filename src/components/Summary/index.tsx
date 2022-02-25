@@ -4,7 +4,7 @@ import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
 import totalImg from "../../assets/total.svg";
 
-export const Summary = () => {
+export const Summary = (): React.ReactElement => {
   return (
     <Container>
       <div>
