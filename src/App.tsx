@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { Dashboard } from "./components/Dashboard";
-import { Header } from "./components/Header";
-import { NewTransactionModal } from "./components/NewTransactionModal";
-import { GlobalStyle } from "./styles/global";
+import { Dashboard } from './components/Dashboard';
+import { Header } from './components/Header';
+import { NewTransactionModal } from './components/NewTransactionModal';
+import { TransactionsProvider } from './hooks/useTransactions';
+import { GlobalStyle } from './styles/global';
 
 export const App = (): React.ReactElement => {
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] =
@@ -16,7 +17,7 @@ export const App = (): React.ReactElement => {
     setIsNewTransactionModalOpen(false);
 
   return (
-    <>
+    <TransactionsProvider>
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModalOpen} />
       <Dashboard />
       <NewTransactionModal
@@ -24,6 +25,6 @@ export const App = (): React.ReactElement => {
         onClose={handleCloseNewTransactionModalOpen}
       />
       <GlobalStyle />
-    </>
+    </TransactionsProvider>
   );
 };

@@ -1,12 +1,11 @@
-import { useState } from "react";
-import Modal from "react-modal";
+import { useState } from 'react';
+import Modal from 'react-modal';
 
-import { Container, RadioBox, TransactionTypeContainer } from "./styles";
-
-import closeImg from "../../assets/close.svg";
-import incomeImg from "../../assets/income.svg";
-import outcomeImg from "../../assets/outcome.svg";
-import { api } from "../../services/api";
+import closeImg from '../../assets/close.svg';
+import incomeImg from '../../assets/income.svg';
+import outcomeImg from '../../assets/outcome.svg';
+import { useTransactions } from '../../hooks/useTransactions';
+import { Container, RadioBox, TransactionTypeContainer } from './styles';
 
 // accessibility: adds "aria-hidden: true" on div #root
 Modal.setAppElement("#root");
@@ -20,28 +19,35 @@ export const NewTransactionModal = ({
   isOpen,
   onClose,
 }: NewTransactionModalProps): React.ReactElement => {
+  const { createTransaction } = useTransactions();
+
   const [title, setTitle] = useState<string>("");
-  const [value, setValue] = useState<number>(0);
+  const [amount, setAmount] = useState<number>(0);
   const [category, setCategory] = useState<string>("");
   const [type, setType] = useState<"deposit" | "withdraw">("deposit");
 
-  const handleCreateNewTransaction = (event: React.FormEvent) => {
+  const resetData = (): void => {
+    setTitle("");
+    setAmount(0);
+    setCategory("");
+    setType("deposit");
+  };
+
+  const handleCreateNewTransaction = async (event: React.FormEvent) => {
     event.preventDefault();
+    await createTransaction({ title, amount, category, type });
+    handleClose();
+  };
 
-    const data = {
-      title,
-      value,
-      type,
-      category,
-    };
-
-    api.post("/transactions", data);
+  const handleClose = () => {
+    resetData();
+    onClose();
   };
 
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={onClose}
+      onRequestClose={handleClose}
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
@@ -62,8 +68,8 @@ export const NewTransactionModal = ({
           type="number"
           name="value"
           placeholder="Value"
-          value={value}
-          onChange={(event) => setValue(Number(event.target.value))}
+          value={amount}
+          onChange={(event) => setAmount(Number(event.target.value))}
         />
 
         <TransactionTypeContainer>
