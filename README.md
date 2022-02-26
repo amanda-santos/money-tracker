@@ -1,46 +1,87 @@
-# Getting Started with Create React App
+<h1 align="center">
+ :money_with_wings: money tracker
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/amanda-santos/money-tracker">
+  
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/amanda-santos/money-tracker">
+  
+  <a href="https://github.com/amanda-santos/money-tracker/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/amanda-santos/money-tracker">
+  </a>
+  
+  <a href="https://github.com/amanda-santos/money-tracker/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/amanda-santos/money-tracker">
+  </a>
+  
+  <img alt="GitHub" src="https://img.shields.io/github/license/amanda-santos/money-tracker">
+</p>
 
-## Available Scripts
+<p align="center">
+  <a href="#-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-license">License</a>
+</p>
 
-In the project directory, you can run:
+## 📝 About the project
 
-### `yarn start`
+<p>money tracker is an app that helps you keep track of all your incomes and outcomes. Developed during Ignite React (Rocketseat).</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 👩🏻‍💻 Technologies
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Technologies used to develop this project:
 
-### `yarn test`
+- React
+- TypeScript
+- Styled Components
+- MirageJS
+- React Modal
+- Polished
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⌨ Getting started
 
-### `yarn build`
+- Run `npm i` or `yarn` to install the dependencies
+- Run the development server with `npm start` or `yarn start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🖥 Preview
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🤔 How to contribute
 
-### `yarn eject`
+**Make a fork of this repository**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+# Fork using GitHub official command line
+# If you don't have the GitHub CLI, use the web site to do that.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+$ gh repo fork amanda-santos/money-tracker
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Follow the steps below**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+# Clone your fork
+$ git clone your-fork-url && cd money-tracker
 
-## Learn More
+# Create a branch with your feature
+$ git checkout -b my-feature
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Make the commit with your changes
+$ git commit -m 'feat: My new feature'
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Send the code to your remote branch
+$ git push origin my-feature
+```
+
+After your pull request is merged, you can delete your branch
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Made with ❤ by Amanda Santos <br />
